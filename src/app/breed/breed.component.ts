@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataProvider } from '../providers/provider.service'
+import { DataProvider } from '../providers/provider.service';
 
 @Component({
   selector: 'app-breed',
@@ -8,9 +8,16 @@ import { DataProvider } from '../providers/provider.service'
 })
 export class BreedComponent implements OnInit {
 
-  constructor(private dataproviderss: DataProvider) { 
-    dataproviderss.LoadBreeds();
-  }
+  breeds: any;
+
+  constructor(private dataproviderss: DataProvider) {
+    dataproviderss.LoadAPI('/breeds').then(data => {
+        this.breeds = data
+        console.log(this.breeds)
+      }
+    )
+    
+   }
 
   ngOnInit(): void {
   }

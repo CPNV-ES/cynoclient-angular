@@ -10,5 +10,48 @@
     </form>
     <div class="example-button-row">
       <button mat-button color="primary">Primary</button>
-    </div>
+    </div>    
+</section>
+<section>
+  <!-- <mat-nav-list>
+    <mat-list-item *ngFor="let service of breeds">
+       <a matLine href="...">{{ service.classification }}</a>
+    </mat-list-item>
+  </mat-nav-list> -->
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Classification</th>
+        <th>Espérance de vie</th>
+        <th>Min size Female</th>
+        <th>Max size Female</th>
+        <th>Min weight Female</th>
+        <th>Max weight Female</th>
+        <th>Min size Male</th>
+        <th>Max size Male</th>
+        <th>Min weight Male</th>
+        <th>Max weight Male</th>
+        <th>morpho type</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of breeds">
+        <td>{{data.noun}}</td>
+        <td>{{data.classification}}</td>
+        <td>{{data.lifeExpectancy}}</td>
+        <td>{{data.minSizeFemale}}</td>
+        <td>{{data.maxSizeFemale}}</td>
+        <td>{{data.minWeightFemale}}</td>
+        <td>{{data.maxWeightFemale}}</td>
+        <td>{{data.minSizeMale}}</td>
+        <td>{{data.maxSizeMale}}</td>
+        <td>{{data.minWeightMale}}</td>
+        <td>{{data.maxWeightMale}}</td>
+        <td>{{data.morphotype}}</td>
+        <td><img src="{{data.morphotype}}"></td>
+      </tr>
+    </tbody>
+  </table>
 </section>
