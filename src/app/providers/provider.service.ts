@@ -13,11 +13,10 @@ export class DataProvider {
     ngOnInit(): void {
     }
 
-    public LoadBreeds(): Promise<any> {
+    public LoadAPI(route: String): Promise<any> {
         return new Promise<any>( (resolve, reject) => {
-            this.http.get(this.apiurl+'/breeds').subscribe(
+            this.http.get(this.apiurl+route).subscribe(
                 response => {
-                    console.log(response)
                     return resolve(response);
                 },
                 err => {
