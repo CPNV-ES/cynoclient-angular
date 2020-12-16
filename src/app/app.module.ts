@@ -9,16 +9,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
+import { ClientsComponent } from './clients/clients.component';
 
 
 const routes: Routes = [
-  { path: 'reports', component: ConsultationReportComponent }
+  { path: 'reports', component: ConsultationReportComponent },
+  { path: 'clients', component: ClientsComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationReportComponent
+    ConsultationReportComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
