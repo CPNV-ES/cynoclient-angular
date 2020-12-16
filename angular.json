@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "prw3-front-end"
+  "defaultProject": "prw3-front-end",
+  "cli": {
+    "analytics": false
+  }
 }
