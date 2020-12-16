@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SERVICES } from './temp_services_list';
 
 @Component({
   selector: 'app-consultation-report',
@@ -8,11 +8,16 @@ import { SERVICES } from './temp_services_list';
 })
 export class ConsultationReportComponent implements OnInit {
 
-  services = SERVICES;
+  services:any;
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get('http://127.0.0.1:3000/services') 
+    .subscribe(Response => { 
+      console.log(Response); 
+      this.services=Response; 
+    }); 
   }
 
 }

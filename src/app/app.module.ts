@@ -5,31 +5,32 @@ import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
+import { CreateServiceComponent } from './create-service/create-service.component';
+import { ViewServiceComponent } from './view-service/view-service.component';
 
-
-const routes: Routes = [
-  { path: 'reports', component: ConsultationReportComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationReportComponent
+    ConsultationReportComponent,
+    CreateServiceComponent,
+    ViewServiceComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule,
-    RouterModule.forRoot(routes)
+    MatIconModule
   ],
-  exports: [ RouterModule ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
