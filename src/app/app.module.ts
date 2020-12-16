@@ -14,7 +14,8 @@ import { DogsComponent } from './dogs/dogs.component';
 
 
 const routes: Routes = [
-  { path: 'reports', component: ConsultationReportComponent }
+  { path: 'reports', component: ConsultationReportComponent },
+  { path: 'dogs', component: DogsComponent }
 ];
 
 @NgModule({
