@@ -43,7 +43,12 @@
         <td>{{dog.idClient}}</td>
         <td>{{dog.idBreed}}</td>
         <td>{{dog.idCrossBreed}}</td>
-        <td *ngIf="true == true">{{dog.crossbreed}}</td>
+        <ng-container *ngIf="dog.crossbreed; else elseTemplate">
+          <td>{{dog.crossbreed.noun}}</td>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <td>-</td>
+        </ng-template>
         <td>{{dog.client.firstname + " " + dog.client.lastname}}</td>
         <td><img src="{{dog.breed.picture}}" width="150" height="150" style="object-fit: cover;"></td>
       </tr>
