@@ -1,1 +1,52 @@
-<p>dogs works!</p>
+<h1>Liste des Chiens</h1>
+
+<!-- Search form -->
+
+<section>
+    <form class="form-inline waves-light" mdbWavesEffect>
+        <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        </div>
+    </form>
+    <div class="example-button-row">
+      <button mat-button color="primary">Primary</button>
+    </div>
+</section>
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Sexe</th>
+        <th>Date de naissance</th>
+        <th>Stérilisé</th>
+        <th>Chemical</th>
+        <th>Couleur</th>
+        <th>Mort</th>
+        <th>ID Client</th>
+        <th>ID Bread</th>
+        <th>ID Croisement</th>
+        <th>Croisement</th>
+        <th>Client</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dog of dogs">
+        <td>{{dog.noun}}</td>
+        <td>{{dog.female}}</td>
+        <td>{{dog.birthdate}}</td>
+        <td>{{dog.sterilized}}</td>
+        <td>{{dog.chemical}}</td>
+        <td>{{dog.color}}</td>
+        <td>{{dog.dead}}</td>
+        <td>{{dog.idClient}}</td>
+        <td>{{dog.idBreed}}</td>
+        <td>{{dog.idCrossBreed}}</td>
+        <td *ngIf="true == true">{{dog.crossbreed}}</td>
+        <td>{{dog.client.firstname + " " + dog.client.lastname}}</td>
+        <td><img src="{{dog.breed.picture}}" width="150" height="150" style="object-fit: cover;"></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
