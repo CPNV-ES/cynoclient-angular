@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataProvider } from '../providers/provider.service';
 
 @Component({
   selector: 'app-breed',
@@ -10,16 +9,15 @@ export class BreedComponent implements OnInit {
 
   breeds: any;
 
-  constructor(private dataproviderss: DataProvider) {
-    dataproviderss.LoadAPI('/breeds').then(data => {
-        this.breeds = data
-        console.log(this.breeds)
-      }
-    )
-    
+  constructor() {
+        
    }
 
   ngOnInit(): void {
+  }
+
+  showLink(v: any){
+    window.open(v.link)
   }
 
 }
