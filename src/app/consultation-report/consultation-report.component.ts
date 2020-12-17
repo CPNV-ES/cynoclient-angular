@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SERVICES } from './temp_services_list';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-consultation-report',
@@ -10,7 +11,8 @@ export class ConsultationReportComponent implements OnInit {
 
   services = SERVICES;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
