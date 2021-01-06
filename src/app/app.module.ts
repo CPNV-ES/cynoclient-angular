@@ -5,6 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     FormsModule,
+    MatTableModule,
     RouterModule.forRoot(routes),
   ],
   exports: [ RouterModule ],

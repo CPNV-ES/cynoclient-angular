@@ -1,11 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Dogs {
+  id: number
+  noun: string
+  female: boolean
+  birthdate: Date
+  sterilized: boolean
+  chemical: boolean
+  color: string
+  dead: boolean
+  idClient: number
+  idBreed: number
+  idCrossBreed: number
+}
+
 @Component({
   selector: 'app-dogs',
   templateUrl: './dogs.component.html',
   styleUrls: ['./dogs.component.css']
 })
+
+
 export class DogsComponent implements OnInit {
+
+  // Mat Table Columns
+  displayedColumns: string[] = ['id', 'noun', 'female', 'birthdate', 'sterilized', 'chemical', 'color', 'dead', 'idClient', 'idBreed', 'idCrossBreed', 'client'];
 
   // Api Extract
 
