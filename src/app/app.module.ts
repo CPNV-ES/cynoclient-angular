@@ -9,12 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
-import { BreedComponent } from './breed/breed.component';
 import { BreedsComponent } from './breeds/breeds.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 const routes: Routes = [
-  { path: 'reports', component: ConsultationReportComponent }
+  { path: 'reports', component: ConsultationReportComponent },
+  { path: 'breeds', component: BreedsComponent }
 ];
 
 @NgModule({
@@ -30,6 +31,7 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   exports: [ RouterModule ],
