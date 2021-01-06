@@ -8,7 +8,7 @@ import {Disease} from './disease';
   styleUrls: ['./disease.component.css']
 })
 export class DiseaseComponent implements OnInit {
-  diseases = Disease[];
+  diseases: Disease[];
 
   constructor(private diseasesService: DiseasesService) { }
 
