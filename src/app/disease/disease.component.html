@@ -1,0 +1,14 @@
+<div class="title">
+    <h1>Liste des maladies</h1>
+</div>
+<div>
+  <mat-list>
+     <mat-list-item *ngFor="let disease of diseases">
+      <mat-icon matListIcon style="color: purple;">coronavirus</mat-icon>
+      <h1 matLine> {{disease.noun}} </h1>
+      <p matLine>
+        <span> {{disease.description}} </span>
+      </p>
+     </mat-list-item>
+  </mat-list>
+</div>
