@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +34,10 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatAutocompleteModule,
+    MatInputModule,
     RouterModule.forRoot(routes)
   ],
   exports: [ RouterModule ],
