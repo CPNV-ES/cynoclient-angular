@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
+import { BreedComponent } from './breed/breed.component';
+import { BreedsComponent } from './breeds/breeds.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationReportComponent
+    ConsultationReportComponent,
+    BreedsComponent
   ],
   imports: [
     BrowserModule,
