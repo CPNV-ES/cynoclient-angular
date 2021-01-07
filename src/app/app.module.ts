@@ -8,20 +8,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
-import { BreedsComponent } from './breeds/breeds.component';
+//import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import { BreedsComponent } from './breeds/breeds.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
 
 const routes: Routes = [
-  { path: 'reports', component: ConsultationReportComponent },
-  { path: 'breeds', component: BreedsComponent }
+  { path: 'breeds', component: BreedsComponent, }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultationReportComponent,
+    //ConsultationReportComponent,
     BreedsComponent
   ],
   imports: [
@@ -32,7 +33,10 @@ const routes: Routes = [
     MatListModule,
     MatIconModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    MatInputModule,
+    MatTableModule
   ],
   exports: [ RouterModule ],
   providers: [],
