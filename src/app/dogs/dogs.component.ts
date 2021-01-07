@@ -1,3 +1,4 @@
+import { DogsService } from './dogs.service';
 import { Component, OnInit } from '@angular/core';
 
 export interface Dogs {
@@ -24,11 +25,13 @@ export interface Dogs {
 export class DogsComponent implements OnInit {
 
   // Mat Table Columns
-  displayedColumns: string[] = ['id', 'noun', 'female', 'birthdate', 'sterilized', 'chemical', 'color', 'dead', 'idClient', 'idBreed', 'idCrossBreed', 'client'];
+  displayedColumns: string[] = ['id', 'noun', 'female', 'birthdate', 'sterilized', 'chemical', 'color', 'dead', 'idClient', 'idBreed', 'idCrossBreed', 'client']
+
+  dogs: Dogs[] = []
 
   // Api Extract
 
-  dogs = [
+  dogs_extract = [
     {
         "id": 1,
         "noun": "Luna",
@@ -659,12 +662,20 @@ export class DogsComponent implements OnInit {
             "lifeExpectancy": 13
         },
         "crossbreed": null
-    }
-]
+      }
+  ]
 
-  constructor() { }
+  constructor( private dogsService: DogsService ) { }
 
   ngOnInit(): void {
+    this.getDogs()
   }
 
+  getDogs(): void {
+    this.dogsService.getDogs()
+      .subscribe(
+        dogs => (this.dogs = dogs),
+        err => console.log('HTTP Error', err)
+      )
+  }
 }

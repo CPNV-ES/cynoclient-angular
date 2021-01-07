@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
 import { DogsComponent } from './dogs/dogs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
     MatIconModule,
     FormsModule,
     MatTableModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
   ],
   exports: [ RouterModule ],
