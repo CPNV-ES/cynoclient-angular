@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+    margin-top: 20px;
+}
+.flex-child {
+    flex: 1;
+}  
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+.descriptionText{
+    margin-top: 50px;
+}

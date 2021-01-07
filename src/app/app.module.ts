@@ -3,23 +3,23 @@ import { NgModule } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule, Routes } from '@angular/router';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
-import { CreateServiceComponent } from './create-service/create-service.component';
-import { ViewServiceComponent } from './view-service/view-service.component';
+import { ServicesComponent } from './services/services.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationReportComponent,
-    CreateServiceComponent,
-    ViewServiceComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,10 @@ import { ViewServiceComponent } from './view-service/view-service.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [],
   providers: [],

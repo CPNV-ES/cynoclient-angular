@@ -2,8 +2,16 @@
 
 <h2>Liste des services</h2>
 
+<!--<table mat-table [dataSource]="services">
+  <tr *ngFor="let service of services">
+    <td>{{service.type}}</td>
+    <td>{{service.moment}}</td>
+    <td>{{service.dogs[0].noun}}</td>
+  </tr>
+</table>-->
+
 <mat-nav-list>
   <mat-list-item *ngFor="let service of services">
-     <a matLine href="/service/{{service.id}}">{{ service.type }}, {{ service.moment }}, </a>
+     <a matLine href="/service/{{service.id}}">{{ service.type }}, {{ service.moment }}, Nom du chien : {{service.dogs[0].noun}}</a>
   </mat-list-item>
 </mat-nav-list>

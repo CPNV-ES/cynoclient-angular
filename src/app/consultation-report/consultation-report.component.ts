@@ -19,5 +19,4 @@ export class ConsultationReportComponent implements OnInit {
       this.services=Response; 
     }); 
   }
-
 }
