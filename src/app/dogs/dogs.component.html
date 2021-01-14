@@ -22,7 +22,10 @@
     <!-- Gender Column -->
     <ng-container matColumnDef="female">
       <th mat-header-cell *matHeaderCellDef> Sexe </th>
-      <td mat-cell *matCellDef="let element"> {{element.female}} </td>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.female;"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 4a6 6 0 0 1 6 6c0 2.97-2.16 5.44-5 5.92V18h2v2h-2v2h-2v-2H9v-2h2v-2.08c-2.84-.48-5-2.95-5-5.92a6 6 0 0 1 6-6m0 2a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4z" fill="#626262"/></svg> </td>
+        <td mat-cell *ngIf="!element.female;"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 9c1.29 0 2.5.41 3.47 1.11L17.58 5H13V3h8v8h-2V6.41l-5.11 5.09c.7 1 1.11 2.2 1.11 3.5a6 6 0 0 1-6 6a6 6 0 0 1-6-6a6 6 0 0 1 6-6m0 2a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4z" fill="#626262"/></svg> </td>
+      </ng-container>
     </ng-container>
 
     <!-- birthdate Column -->
@@ -34,13 +37,19 @@
     <!-- sterilized Column -->
     <ng-container matColumnDef="sterilized">
       <th mat-header-cell *matHeaderCellDef> Sterilized </th>
-      <td mat-cell *matCellDef="let element"> {{element.sterilized}} </td>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.sterilized;"> <span class="material-icons">done</span> </td>
+        <td mat-cell *ngIf="!element.sterilized;"> <span class="material-icons">clear</span> </td>
+      </ng-container>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="chemical">
       <th mat-header-cell *matHeaderCellDef> Chemical </th>
-      <td mat-cell *matCellDef="let element"> {{element.chemical}} </td>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.chemical;"> <span class="material-icons">done</span> </td>
+        <td mat-cell *ngIf="!element.chemical;"> <span class="material-icons">clear</span> </td>
+      </ng-container>
     </ng-container>
 
     <!-- Color Column -->
@@ -51,9 +60,10 @@
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="dead">
-      <th mat-header-cell *matHeaderCellDef> Mort </th>
+      <th mat-header-cell *matHeaderCellDef> Vivant </th>
       <ng-container *matCellDef="let element">
-        <td mat-cell *ngIf="element.dead; else elseTemplate"> Oui </td>
+        <td mat-cell *ngIf="element.dead;"> <span class="material-icons">horizontal_rule</span> </td>
+        <td mat-cell *ngIf="!element.dead;"> <span class="material-icons">done</span> </td>
       </ng-container>
     </ng-container>
 
@@ -87,7 +97,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)" class="row"></tr>
 
   </table>
 

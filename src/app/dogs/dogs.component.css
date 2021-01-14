@@ -1,0 +1,4 @@
+.row:hover{
+  background-color: rgb(206, 206, 206);
+  user-select: none;
+}
