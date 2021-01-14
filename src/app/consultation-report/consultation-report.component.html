@@ -2,12 +2,6 @@
 
 <h2>Liste des services</h2>
 
-<!-- <mat-nav-list>
-  <mat-list-item *ngFor="let service of services">
-     <a matLine href="/service/{{service.id}}">{{ service.type }}, {{ service.moment }}, Nom du chien : {{service.dogs[0].noun}}</a>
-  </mat-list-item>
-</mat-nav-list> -->
-
 <mat-form-field>
   <mat-label>Filter</mat-label>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. 03.02.2019" #input>

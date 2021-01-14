@@ -22,9 +22,8 @@ export class ConsultationReportComponent implements OnInit {
   }
 
   applyFilter(filterValue: string) {
-
-    filterValue = filterValue.trim().toLowerCase();  // Remove whitespace // MatTableDataSource defaults to lowercase matches
-    this.services.filter = filterValue;
+      filterValue = filterValue.trim().toLowerCase();  // Remove whitespace // MatTableDataSource defaults to lowercase matches
+      this.services.filter = filterValue;
   }
 
   getServices(): void{
@@ -33,8 +32,6 @@ export class ConsultationReportComponent implements OnInit {
       this.services = new MatTableDataSource(services);
 
         this.services.filterPredicate = function(data:consultation, filter: string): boolean {
-          // return data.noun.toLowerCase().includes(filter);
-          console.log(data)
           return data.moment.toLowerCase().includes(filter);
         }
     })
