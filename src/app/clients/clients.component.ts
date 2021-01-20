@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import {ClientsService} from './clients.service';
+import {Client} from './client';
 
 
 @Component({
   selector: 'app-clients',
   templateUrl: './clients.component.html',
+  providers: [ClientsService],
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-
+  clients: Client[];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -17,8 +20,14 @@ export class ClientsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  constructor(private clientsService: ClientsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getClients();
+  }
+
+  getClients(): void {
+    this.clientsService.getClients().subscribe(clients => (this.clients = clients));
   }
 
 }
