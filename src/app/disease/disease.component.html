@@ -1,14 +1,47 @@
 <div class="title">
     <h1>Liste des maladies</h1>
 </div>
-<div>
-  <mat-list>
-     <mat-list-item *ngFor="let disease of diseases">
-      <mat-icon matListIcon style="color: purple;">coronavirus</mat-icon>
-      <h1 matLine> {{disease.noun}} </h1>
-      <p matLine>
-        <span> {{disease.description}} </span>
-      </p>
-     </mat-list-item>
-  </mat-list>
+<div class="center">
+  <mat-form-field>
+    <mat-label class="filterLabel">Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+  </mat-form-field>
+  <button class="buttonFilter" mat-raised-button color="primary"><mat-icon>coronavirus</mat-icon></button>
+  <table mat-table [dataSource]="diseases" class="mat-elevation-z8">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="noun">
+      <th mat-header-cell *matHeaderCellDef>Nom de la maladie</th>
+      <td mat-cell *matCellDef="let element"> {{element.noun}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="symptoms">
+      <th mat-header-cell *matHeaderCellDef>Symptômes</th>
+      <td mat-cell *matCellDef="let element"> {{element.symptoms}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vaccinable">
+      <th mat-header-cell *matHeaderCellDef>Vaccinable</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon *ngIf="element.vaccinable === 1">health_and_safety</mat-icon>
+        <mat-icon *ngIf="element.vaccinable === 0">close</mat-icon>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="zoonosis">
+      <th mat-header-cell *matHeaderCellDef>Zoonosis</th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon *ngIf="element.zoonosis === 1">coronavirus</mat-icon>
+        <mat-icon *ngIf="element.zoonosis === 0">close</mat-icon>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
 </div>

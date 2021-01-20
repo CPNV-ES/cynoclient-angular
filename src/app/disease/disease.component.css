@@ -1,4 +1,32 @@
+.center{
+    width: 80%;
+    margin: auto;
+}
+
 .title{
     text-align:center;
     vertical-align: middle;
-};
+}
+
+.buttonFilter{
+    margin-left: 1%;
+}
+
+.filterLabel{
+    color: white;
+}
+
+.mat-column-symptoms{
+  width: 70%;
+  
+}
+
+.mat-column-noun{
+    width: 14%;
+}
+
+.mat-column-vaccinable,.mat-column-zoonosis{
+    width: 8%;
+    text-align: center;
+}
+
