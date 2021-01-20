@@ -1,8 +1,13 @@
 <h1>Liste des Chiens</h1>
 
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+
 <!-- Dogs Table form -->
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dogs" style="width: 100%;">
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->

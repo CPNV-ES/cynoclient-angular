@@ -1,5 +1,6 @@
 import { DogsService } from './dogs.service';
 import { Component, OnInit } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface Dogs {
   id: number
@@ -30,6 +31,8 @@ export class DogsComponent implements OnInit {
 
   dogs: Dogs[] = []
 
+  dataSource = new MatTableDataSource<Dogs>(this.dogs);
+
   constructor( private dogsService: DogsService ) { }
 
   ngOnInit(): void {
@@ -39,12 +42,17 @@ export class DogsComponent implements OnInit {
   getDogs(): void {
     this.dogsService.getDogs()
       .subscribe(
-        dogs => (this.dogs = dogs),
+        dogs => (this.dataSource.data = dogs as Dogs[]),
         err => console.log('HTTP Error', err)
       )
   }
 
   onRowClicked(item: Dogs){
     console.log(item.id)
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }

@@ -2,3 +2,8 @@
   background-color: rgb(206, 206, 206);
   user-select: none;
 }
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
