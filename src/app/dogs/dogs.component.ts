@@ -1,6 +1,8 @@
 import { DogsService } from './dogs.service';
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { ViewChild } from '@angular/core';
 
 export interface Dogs {
   id: number
@@ -35,8 +37,11 @@ export class DogsComponent implements OnInit {
 
   constructor( private dogsService: DogsService ) { }
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   ngOnInit(): void {
-    this.getDogs()
+    this.getDogs();
+      setTimeout(() => this.dataSource.paginator = this.paginator);
   }
 
   getDogs(): void {

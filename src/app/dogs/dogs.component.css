@@ -1,3 +1,8 @@
+.table{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .row:hover{
   background-color: rgb(206, 206, 206);
   user-select: none;
@@ -6,4 +11,6 @@
 .mat-form-field {
   font-size: 14px;
   width: 100%;
+  background-color: whitesmoke;
+  color: rgb(30, 30, 30);
 }

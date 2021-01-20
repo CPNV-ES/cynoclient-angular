@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
     MatTableModule,
     MatInputModule,
     HttpClientModule,
+    MatPaginatorModule,
     RouterModule.forRoot(routes),
   ],
   exports: [ RouterModule ],
