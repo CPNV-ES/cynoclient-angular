@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { consultation } from './consultation';
+import { Consultation } from './consultation';
 import { ConsultationReportService } from './consultation-report.service'
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ConsultationReportComponent implements OnInit {
 
-  services: MatTableDataSource<consultation>;
+  services: MatTableDataSource<Consultation>;
   displayedColumns: string[] = ['type', 'moment', 'dogs'];
 
   constructor(private router : Router, private consultationReportService: ConsultationReportService) { }
@@ -31,9 +31,10 @@ export class ConsultationReportComponent implements OnInit {
     .subscribe(services => {
       this.services = new MatTableDataSource(services);
 
-        this.services.filterPredicate = function(data:consultation, filter: string): boolean {
-          return data.moment.toLowerCase().includes(filter);
-        }
+        // apply a filter on a single column
+        // this.services.filterPredicate = function(data:consultation, filter: string): boolean {
+        //   return data.moment.toLowerCase().includes(filter);
+        // }
     })
   }
 
@@ -42,7 +43,8 @@ export class ConsultationReportComponent implements OnInit {
     this.router.navigateByUrl("service/"+id)
   }
 
-  addColumn(): void{
-    console.log("addColumn");
+  addService(): void{
+    console.log("addService");
+    this.router.navigateByUrl("service/create")
   }
 }

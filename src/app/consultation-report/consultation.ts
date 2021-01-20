@@ -1,4 +1,4 @@
-export interface consultation {
+export interface Consultation {
     moment: String,
     duration: number,
     type: String,

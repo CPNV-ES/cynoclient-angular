@@ -4,10 +4,10 @@
 
 <mat-form-field>
   <mat-label>Filter</mat-label>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. 03.02.2019" #input>
+  <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Ex. 03.02.2019" #input>
 </mat-form-field>
 
-<button mat-raised-button (click)="addColumn()"> <mat-icon>add</mat-icon> </button>
+<button mat-raised-button (click)="addService()"> <mat-icon>add</mat-icon> </button>
 <br>
 <br>
 

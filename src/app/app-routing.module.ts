@@ -4,8 +4,10 @@ import { ConsultationReportComponent } from './consultation-report/consultation-
 import { ServicesComponent } from './services/services.component';
 
 const routes: Routes = [
+  //Service
   { path: 'reports', component: ConsultationReportComponent },
-  { path: 'service/:id', component: ServicesComponent }
+  // { path: 'service/create', component: ConsultationReportComponent },
+  { path: 'service/:id', component: ServicesComponent },
 ];
 
 @NgModule({

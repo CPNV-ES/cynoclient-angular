@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {consultation} from './consultation';
+import {Consultation} from './consultation';
 
 @Injectable()
 export class ConsultationReportService {
@@ -9,7 +9,7 @@ export class ConsultationReportService {
 
   constructor(private http: HttpClient) { }
 
-  getServices(): Observable<consultation[]> {
-    return this.http.get<consultation[]>(this.ConsultationsUrl);
+  getServices(): Observable<Consultation[]> {
+    return this.http.get<Consultation[]>(this.ConsultationsUrl);
   }
 }
