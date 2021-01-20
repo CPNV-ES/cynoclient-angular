@@ -14,7 +14,7 @@ import {filter} from 'rxjs/operators';
 export class ClientsComponent implements OnInit {
 
   clients: MatTableDataSource<Client>;
-  displayedColumns: string[] = ['firstname', 'lastname', 'email', 'phone'];
+  displayedColumns: string[] = ['firstname', 'lastname', 'sex', 'phone'];
 
   applyFilter(event: Event) {
     var filterValue = (event.target as HTMLInputElement).value;
