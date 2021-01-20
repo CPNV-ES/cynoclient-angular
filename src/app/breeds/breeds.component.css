@@ -7,3 +7,11 @@ table {
     font-size: 14px;
     width: 100%;
   }
+
+  .mat-column-add {
+    width: 1% !important;
+  }
+
+  .mat-accent {
+    background-color: green;
+  }

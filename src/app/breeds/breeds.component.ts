@@ -15,9 +15,10 @@ export class BreedsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBreeds();
+    console.log(this.getBreeds);
   }
 
-  displayedColumns: string[] = ['breed'];
+  displayedColumns: string[] = ['breed','add'];
 
   applyFilter(filterValue: string) {
 

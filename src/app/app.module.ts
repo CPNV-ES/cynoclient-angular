@@ -14,6 +14,9 @@ import { BreedsComponent } from './breeds/breeds.component';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 const routes: Routes = [
   { path: 'breeds', component: BreedsComponent, }
@@ -32,11 +35,14 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatCardModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatGridListModule
   ],
   exports: [ RouterModule ],
   providers: [],
