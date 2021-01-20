@@ -1,31 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { Service } from './service';
+import { ServicesService } from './services.service'
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
+  providers: [ServicesService],
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent implements OnInit {
 
-  service:any;
+  service: Service[];
+  id: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private location: Location,
-    private http : HttpClient
-    ) { }
+  constructor(private servicesService: ServicesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    
-    this.http.get('http://127.0.0.1:3000/services/' + id) 
-    .subscribe(Response => { 
-      console.log(Response); 
-      this.service=Response; 
-    }); 
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.getService(this.id);
+  }
+
+  getService(id: string): void {
+    this.servicesService.getService(id)
+    .subscribe(service => {
+      this.service = service;     
+    })
   }
 
 }
