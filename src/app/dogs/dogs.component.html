@@ -1,0 +1,113 @@
+<div class="mat-elevation-z8 table">
+
+  <h1>Liste des Chiens</h1>
+
+  <!-- Table form Filter -->
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex: Gris" #input>
+  </mat-form-field>
+
+  <!-- Dogs Table form -->
+  <table mat-table [dataSource]="dataSource" style="width: 100%;">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="noun">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.noun}} </td>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="female">
+      <th mat-header-cell *matHeaderCellDef> Sexe </th>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.female;"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 4a6 6 0 0 1 6 6c0 2.97-2.16 5.44-5 5.92V18h2v2h-2v2h-2v-2H9v-2h2v-2.08c-2.84-.48-5-2.95-5-5.92a6 6 0 0 1 6-6m0 2a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4z" fill="#626262"/></svg> </td>
+        <td mat-cell *ngIf="!element.female;"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 9c1.29 0 2.5.41 3.47 1.11L17.58 5H13V3h8v8h-2V6.41l-5.11 5.09c.7 1 1.11 2.2 1.11 3.5a6 6 0 0 1-6 6a6 6 0 0 1-6-6a6 6 0 0 1 6-6m0 2a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4z" fill="#626262"/></svg> </td>
+      </ng-container>
+    </ng-container>
+
+    <!-- birthdate Column -->
+    <ng-container matColumnDef="birthdate">
+      <th mat-header-cell *matHeaderCellDef> Date de naissance </th>
+      <td mat-cell *matCellDef="let element"> {{element.birthdate}} </td>
+    </ng-container>
+
+    <!-- sterilized Column -->
+    <ng-container matColumnDef="sterilized">
+      <th mat-header-cell *matHeaderCellDef> Sterilized </th>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.sterilized;"> <span class="material-icons">done</span> </td>
+        <td mat-cell *ngIf="!element.sterilized;"> <span class="material-icons">clear</span> </td>
+      </ng-container>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="chemical">
+      <th mat-header-cell *matHeaderCellDef> Chemical </th>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.chemical;"> <span class="material-icons">done</span> </td>
+        <td mat-cell *ngIf="!element.chemical;"> <span class="material-icons">clear</span> </td>
+      </ng-container>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> Couleur </th>
+      <td mat-cell *matCellDef="let element"> {{element.color}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="dead">
+      <th mat-header-cell *matHeaderCellDef> Vivant </th>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.dead;"> <span class="material-icons">horizontal_rule</span> </td>
+        <td mat-cell *ngIf="!element.dead;"> <span class="material-icons">done</span> </td>
+      </ng-container>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="idClient">
+      <th mat-header-cell *matHeaderCellDef> ID Client </th>
+      <td mat-cell *matCellDef="let element"> {{element.idClient}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="idBreed">
+      <th mat-header-cell *matHeaderCellDef> Race </th>
+      <td mat-cell *matCellDef="let element"> {{element.breed.noun}} </td>
+    </ng-container>
+
+    <!-- Croisement Column -->
+    <ng-container matColumnDef="idCrossBreed">
+      <th mat-header-cell *matHeaderCellDef> Croisement </th>
+      <ng-container *matCellDef="let element">
+        <td mat-cell *ngIf="element.idCrossBreed; else elseTemplate"> {{element.crossbreed.noun}} </td>
+      </ng-container>
+
+      <!-- Template Also used by the other cells but cannot be used globally for some reason -->
+      <ng-template #elseTemplate><td mat-cell>-</td></ng-template>
+    </ng-container>
+
+    <!-- Client Column -->
+    <ng-container matColumnDef="client">
+      <th mat-header-cell *matHeaderCellDef> Client </th>
+      <td mat-cell *matCellDef="let element"> {{element.client.firstname + " " + element.client.lastname}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)" class="row"></tr>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+
+</div>

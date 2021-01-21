@@ -1,0 +1,28 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(43, 43, 43);
+}
+
+.sidebar{
+    width: 200px;
+    background: rgb(80, 79, 79);
+}
+
+.nav-caption{
+    display: inline-block;
+    color: rgb(224, 224, 224);
+    text-decoration: none;
+    padding-left: 6px;
+}
+
+h1{
+    text-align: center;
+}
+
+mat-sidenav-content{
+    color: rgb(224, 224, 224);
+}

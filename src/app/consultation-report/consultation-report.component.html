@@ -1,0 +1,36 @@
+<h1>Rapport de consultation</h1>
+
+<h2>Liste des services</h2>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Ex. 03.02.2019" #input>
+</mat-form-field>
+
+<button mat-raised-button (click)="addService()"> <mat-icon>add</mat-icon> </button>
+<br>
+<br>
+
+<table mat-table [dataSource]="services" class="mat-elevation-z8">
+
+  <!-- type Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- moment Column -->
+  <ng-container matColumnDef="moment">
+    <th mat-header-cell *matHeaderCellDef> Moment </th>
+    <td mat-cell *matCellDef="let element"> {{element.moment | date:"dd.MM.Y à hh:MM.ss" }} </td>
+  </ng-container>
+
+  <!-- dogs Column -->
+  <ng-container matColumnDef="dogs">
+    <th mat-header-cell *matHeaderCellDef> Dog </th>
+    <td mat-cell *matCellDef="let element"> {{element.dogs[0].noun}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row.id)"></tr>
+</table>
