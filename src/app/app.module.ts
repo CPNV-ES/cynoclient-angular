@@ -17,6 +17,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
   { path: 'breeds', component: BreedsComponent, }
@@ -42,7 +44,9 @@ const routes: Routes = [
     MatInputModule,
     MatTableModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   exports: [ RouterModule ],
   providers: [],
