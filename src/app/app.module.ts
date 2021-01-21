@@ -10,23 +10,28 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
 import { ClientsComponent } from './clients/clients.component';
+import { DiseasesComponent } from './diseases/diseases.component';
+import { DiseaseComponent } from './diseases/disease/disease.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
+  { path: 'diseases', component: DiseasesComponent },
+  { path: 'disease/:id', component: DiseaseComponent },
+  { path: 'reports', component: ConsultationReportComponent },
   { path: 'reports', component: ConsultationReportComponent },
   { path: 'clients', component: ClientsComponent}
 ];
-
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationReportComponent,
+    DiseasesComponent,
     ClientsComponent
   ],
   imports: [
@@ -37,12 +42,13 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatAutocompleteModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
     MatInputModule,
     MatTableModule,
-    RouterModule.forRoot(routes)
+    MatButtonModule,
+    MatGridListModule,
+    MatAutocompleteModule,
   ],
   exports: [ RouterModule ],
   providers: [],
