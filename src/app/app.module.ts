@@ -10,7 +10,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
@@ -22,6 +23,7 @@ import {BreedsComponent} from './breeds/breeds.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ServicesComponent } from './services/services.component';
 
 
 const routes: Routes = [
@@ -29,26 +31,29 @@ const routes: Routes = [
   { path: 'disease/:id', component: DiseaseComponent },
   { path: 'reports', component: ConsultationReportComponent },
   { path: 'clients', component: ClientsComponent},
-  { path: 'breeds', component: BreedsComponent, }
+  { path: 'breeds', component: BreedsComponent, },
+  { path: 'reports', component: ConsultationReportComponent },
+  // { path: 'service/create', component: [component]  },
+  { path: 'service/:id', component: ServicesComponent },
 ];
+
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationReportComponent,
     DiseasesComponent,
     ClientsComponent,
-    BreedsComponent
+    BreedsComponent,
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
     MatCardModule,
-    HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
     MatInputModule,
@@ -58,6 +63,8 @@ const routes: Routes = [
     MatAutocompleteModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatCheckboxModule,
+    MatSliderModule,
   ],
   exports: [ RouterModule ],
   providers: [],
