@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -92,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -128,6 +128,6 @@
   },
   "defaultProject": "prw3-front-end",
   "cli": {
-    "analytics": "ac244ffe-17ab-4156-914f-e2577aca5a94"
+    "analytics": "9461fb6d-245e-45bb-a3ce-a07813e47025"
   }
 }

@@ -4,28 +4,28 @@
 <button mat-flat-button color="warn">Supprimer</button>
   <div class="flex-container">
     <div class="flex-child">
-        Nom du Client : {{service.dogs[0].client.firstname}} {{service.dogs[0].client.lastname}}
+        Nom du Client : <!-- {{service.dogs[0].client.firstname}} {{service.dogs[0].client.lastname}} -->
     </div>
     <div class="flex-child">
-        Type : {{service.type}} 
+        Type : {{service.type}}
     </div>
   </div>
   <div class="flex-container">
     <div class="flex-child">
-        Nom du chien : {{service.dogs[0].noun}} 
-    </div>
-    <div class="flex-child">
-        Payé : <mat-checkbox [checked]='service.dogs[0].clients_take_services.paid' [class.mat-checkbox-disabled]="false" disabled></mat-checkbox>
-    </div>
-  </div>
-  <div class="flex-container">
-    <div class="flex-child">
-        Date : {{service.moment}} 
-    </div>
-    <div class="flex-child">
-        Adresse et localité : {{service.locality.noun}} {{service.locality.zip}}
-    </div>
-  </div>
+       Nom du chien : <!-- {{service.dogs[0].noun}} -->
+   </div>
+   <div class="flex-child">
+       Payé : <!-- <mat-checkbox [checked]='service.dogs[0].clients_take_services.paid' [class.mat-checkbox-disabled]="false" disabled></mat-checkbox> -->
+   </div>
+ </div>
+ <div class="flex-container">
+   <div class="flex-child">
+       Date : {{service.moment}}
+   </div>
+   <div class="flex-child">
+       Adresse et localité :<!-- {{service.locality.noun}} {{service.locality.zip}} -->
+   </div>
+ </div>
 </div>
 <div *ngIf="service.description != null; else elseBlock" class="descriptionText">{{service.description}}</div>
 <ng-template #elseBlock><div class="descriptionText">Pas de description disponible pour ce service.</div></ng-template>

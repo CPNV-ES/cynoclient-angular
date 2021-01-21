@@ -1,5 +1,6 @@
 import { Consultation } from '../consultation-report/consultation';
 
+
 export interface Service {
     id: number,
     moment: Date,
