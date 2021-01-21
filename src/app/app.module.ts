@@ -15,18 +15,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
 import { DogsComponent } from './dogs/dogs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddDogsComponent } from './dogs/add-dogs/add-dogs.component';
+import { DetailsDogsComponent } from './dogs/details-dogs/details-dogs.component';
 
 
 const routes: Routes = [
   { path: 'reports', component: ConsultationReportComponent },
-  { path: 'dogs', component: DogsComponent }
+  { path: 'dogs', component: DogsComponent },
+  { path: 'dogs/:id', component: DetailsDogsComponent },
+  { path: 'dogs/add', component: AddDogsComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationReportComponent,
-    DogsComponent
+    DogsComponent,
+    AddDogsComponent,
+    DetailsDogsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface Dogs {
   id: number
@@ -35,7 +36,7 @@ export class DogsComponent implements OnInit {
 
   dataSource = new MatTableDataSource<Dogs>(this.dogs);
 
-  constructor( private dogsService: DogsService ) { }
+  constructor( private dogsService: DogsService, private router: Router ) { }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -54,6 +55,7 @@ export class DogsComponent implements OnInit {
 
   onRowClicked(item: Dogs){
     console.log(item.id)
+    this.router.navigate(['/dogs/' + item.id]);
   }
 
   applyFilter(event: Event) {
