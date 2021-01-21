@@ -12,13 +12,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
 import { DiseasesComponent } from './diseases/diseases.component';
+import { DiseaseComponent } from './diseases/disease/disease.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
   { path: 'diseases', component: DiseasesComponent },
-  { path: 'disease/:id', component: ConsultationReportComponent },
+  { path: 'disease/:id', component: DiseaseComponent },
   { path: 'reports', component: ConsultationReportComponent },
 ];
 
