@@ -11,9 +11,9 @@ export class ServicesService {
 
   constructor(private http: HttpClient) { }
 
-  getService(term: string): Observable<Service[]> {
+  getService(term: string): Observable<Service> {
     term = term.trim();
     const options = term ? { params: new HttpParams().set('id', term) } : {};
-    return this.http.get<Service[]>(`http://localhost:3000/services/${term}`, options);
+    return this.http.get<Service>(`http://localhost:3000/services/${term}`, options);
   }
 }

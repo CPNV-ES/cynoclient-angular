@@ -11,7 +11,7 @@ import { ServicesService } from './services.service'
 })
 export class ServicesComponent implements OnInit {
 
-  service: Service[];
+  service: Service;
   id: any;
 
   constructor(private servicesService: ServicesService, private route: ActivatedRoute) { }

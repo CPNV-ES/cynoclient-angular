@@ -9,4 +9,6 @@ export interface Service {
     street: String,
     idLocality: number,
     consultations: Consultation[],
+    // Dogs: Dog[],
+    // Locality: Locality[],
 }
