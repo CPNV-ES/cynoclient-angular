@@ -18,21 +18,26 @@ import { ClientsComponent } from './clients/clients.component';
 import { DiseasesComponent } from './diseases/diseases.component';
 import { DiseaseComponent } from './diseases/disease/disease.component';
 import { FormsModule } from '@angular/forms';
+import {BreedsComponent} from './breeds/breeds.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 const routes: Routes = [
   { path: 'diseases', component: DiseasesComponent },
   { path: 'disease/:id', component: DiseaseComponent },
   { path: 'reports', component: ConsultationReportComponent },
-  { path: 'reports', component: ConsultationReportComponent },
-  { path: 'clients', component: ClientsComponent}
+  { path: 'clients', component: ClientsComponent},
+  { path: 'breeds', component: BreedsComponent, }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     ConsultationReportComponent,
     DiseasesComponent,
-    ClientsComponent
+    ClientsComponent,
+    BreedsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatCardModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
     MatInputModule,
@@ -49,6 +56,8 @@ const routes: Routes = [
     MatButtonModule,
     MatGridListModule,
     MatAutocompleteModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   exports: [ RouterModule ],
   providers: [],
