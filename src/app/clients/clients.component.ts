@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {ClientsService} from './clients.service';
 import {Client} from './client';
-import {filter} from 'rxjs/operators';
 
 
 @Component({
