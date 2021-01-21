@@ -3,21 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Dogs } from './dog';
 
-export interface Dogs {
-  id: number
-  noun: string
-  female: boolean
-  birthdate: Date
-  sterilized: boolean
-  chemical: boolean
-  color: string
-  dead: boolean
-  idClient: number
-  idBreed: number
-  idCrossBreed: number
-}
 
 @Component({
   selector: 'app-dogs',
