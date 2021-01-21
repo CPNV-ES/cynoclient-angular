@@ -11,13 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultationReportComponent } from './consultation-report/consultation-report.component';
-import { DiseaseComponent } from './disease/disease.component';
+import { DiseasesComponent } from './diseases/diseases.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
 const routes: Routes = [
-  { path: 'diseases', component: DiseaseComponent },
+  { path: 'diseases', component: DiseasesComponent },
+  { path: 'disease/:id', component: ConsultationReportComponent },
   { path: 'reports', component: ConsultationReportComponent },
 ];
 
@@ -25,7 +26,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ConsultationReportComponent,
-    DiseaseComponent
+    DiseasesComponent
   ],
   imports: [
     BrowserModule,

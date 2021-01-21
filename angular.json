@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "prw3-front-end"
+  "defaultProject": "prw3-front-end",
+  "cli": {
+    "analytics": "9461fb6d-245e-45bb-a3ce-a07813e47025"
+  }
 }

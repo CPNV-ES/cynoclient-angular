@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {DiseasesService} from './disease.service';
-import {Disease} from './disease';
+import {DiseasesService} from './diseases.service';
+import {Disease} from './diseases';
 import {MatTableDataSource} from '@angular/material/table';
 @Component({
   selector: 'app-disease',
-  templateUrl: './disease.component.html',
+  templateUrl: './diseases.component.html',
   providers: [DiseasesService],
-  styleUrls: ['./disease.component.css']
+  styleUrls: ['./diseases.component.css']
 })
-export class DiseaseComponent implements OnInit {
-  displayedColumns: string[] = ['noun','symptoms','vaccinable','zoonosis'];
+export class DiseasesComponent implements OnInit {
+  displayedColumns: string[] = ['noun','symptoms','vaccinable','zoonosis','button'];
   diseases: MatTableDataSource<Disease>; 
 
   constructor(private diseasesService: DiseasesService) { }
@@ -31,7 +31,7 @@ export class DiseaseComponent implements OnInit {
   applyFilter(event: Event) {
     var filterValue = (event.target as HTMLInputElement).value;
     filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase()
+    filterValue = filterValue.toLowerCase();
     this.diseases.filter = filterValue;
   }
 }
