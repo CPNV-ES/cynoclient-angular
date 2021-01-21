@@ -24,7 +24,8 @@ export class ServicesComponent implements OnInit {
   getService(id: string): void {
     this.servicesService.getService(id)
     .subscribe(service => {
-      this.service = service;     
+      this.service = service;  
+      console.log(this.service)   
     })
   }
 
